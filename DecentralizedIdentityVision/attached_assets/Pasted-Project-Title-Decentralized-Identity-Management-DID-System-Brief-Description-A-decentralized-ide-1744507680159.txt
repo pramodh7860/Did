@@ -1,0 +1,53 @@
+Project Title: Decentralized Identity Management (DID) System
+Brief Description:A decentralized identity verification system that enables secure login without passwords by using MetaMask, Ethereum, and IPFS. This system allows users to manage their identity data securely, giving them complete ownership while ensuring trust and privacy.
+Features:
+
+User Authentication: Users connect their MetaMask wallet for seamless authentication without a password.
+Identity Registration: Users fill out a form with personal details (name, age, college ID) that gets securely uploaded to IPFS.
+Data Storage: User data stored on IPFS referenced by a blockchain smart contract using a Content Identifier (CID).
+Identity Verification: Anyone can verify a user's identity by entering their Ethereum wallet address, retrieving the CID from the smart contract, and pulling the identity data from IPFS.
+Versioning and Update: Allow users to update their information while maintaining previous versions on the blockchain.
+
+User Flow:
+
+User opens the app.
+Clicks “Connect MetaMask” to link their Ethereum wallet.
+Fills out the registration form with personal details.
+Submits the form, which uploads the data to IPFS and retrieves a CID.
+The CID is linked to the user's wallet address through a smart contract.
+To verify identity, anyone can input the public wallet address, fetch the CID, and retrieve identity data from IPFS.
+
+Technical Stack:
+
+Frontend: React with MetaMask for user interface and wallet integration.
+Backend: Node.js with Express to manage API requests and data processing.
+Storage: IPFS for storing identity data and Ethereum for referencing identity through smart contracts.
+Smart Contracts: Solidity for implementing the contracts on the Ethereum blockchain.
+Development Environment: Hardhat or Ganache for local Ethereum node simulation.
+
+Design Guidelines:
+
+Styling Guidelines: Use a minimalist design with a tech-oriented color palette (blues, whites, greys). Use modern typography for clarity.
+Page Layout: Responsive design ensuring compatibility across devices; essential elements (Connect Wallet, Registration Form, Verification) are prominent.
+Navigation Structure: Simple layout with a home page leading to registration and verification functions.
+
+Backend Structure:
+
+Database Architecture: No traditional database; user identity data is stored on IPFS, linked to Ethereum wallet addresses via smart contracts.
+API Endpoints:
+POST /register: Handles user registration, stores data on IPFS, links CID to wallet address.
+GET /verify/:address: Reads from the blockchain to fetch the CID associated with the given wallet address and retrieves corresponding identity data from IPFS.
+
+
+Security Measures: Implement encryption for data before uploading to IPFS and ensure that all interactions with the smart contract are secure and valid.
+
+In-Scope and Out-of-Scope Items:
+In-Scope:
+
+Core features such as user registration, identity verification, and data storage functionalities.
+Integration with MetaMask for wallet connection.
+
+Out-of-Scope:
+
+Advanced analytics related to identity usage.
+Features for advanced user privacy controls beyond what IPFS and Ethereum functionalities provide.
